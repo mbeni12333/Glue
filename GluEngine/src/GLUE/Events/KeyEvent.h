@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace GLUE {
 
 	class GLUE_API KeyEvent : public Event{

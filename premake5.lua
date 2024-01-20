@@ -20,6 +20,12 @@ project "GluEngine"
     targetdir ("build/bin/" .. outputdir .. "/%{prj.name}")
     objdir ("build/bin-int/" .. outputdir .. "/%{prj.name}")
 
+
+
+    pchheader "gepch.h"
+	pchsource "GluEngine/src/gepch.cpp"
+
+
     -- Add all the files in the src folder
     files{
         "%{prj.name}/src/**.h",

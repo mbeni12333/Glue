@@ -1,3 +1,4 @@
+#include "gepch.h"
 #include "GLUE/Application.h"
 #include "GLUE/Log.h"
 #include "GLUE/Events/ApplicationEvent.h"

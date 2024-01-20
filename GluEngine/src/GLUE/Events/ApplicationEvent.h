@@ -2,7 +2,6 @@
 
 #include "GLUE/Events/Event.h"
 
-#include <sstream>
 
 namespace GLUE {
 

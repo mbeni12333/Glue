@@ -2,9 +2,6 @@
 
 #include "GLUE/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace GLUE {
 
 

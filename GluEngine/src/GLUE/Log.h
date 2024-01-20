@@ -1,6 +1,5 @@
 #pragma once
 
-
 #include "GLUE/Core.h"
 #include "spdlog/spdlog.h"
 #include "spdlog/fmt/ostr.h"
