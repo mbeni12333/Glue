@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Core.h"
+#include "GLUE/Core.h"
+#include "GLUE/Events/Event.h"
 
 namespace GLUE{
 

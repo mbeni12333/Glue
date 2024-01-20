@@ -7,8 +7,7 @@ extern GLUE::Application* GLUE::CreateApplication();
 int main(int argc, char** argv){
 
     GLUE::Log::Init();
-    GLUE_CORE_INFO("Started Core Logger successfully");
-    GLUE_INFO("Started Client Logger successfully");
+    GLUE_CORE_WARN("Core logeer initialized !");
 
     auto app = GLUE::CreateApplication();
     app->Run();

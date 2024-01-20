@@ -1,8 +1,9 @@
 #pragma once
 
 
-#include "Core.h"
+#include "GLUE/Core.h"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace GLUE {
 	class GLUE_API Log {
