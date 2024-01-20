@@ -11,6 +11,13 @@ workspace "GluEngine"
 startproject "Sandbox"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+
+
+
+includeDir = {}
+includeDir["GLFW"] = "GluEngine/vendor/GLFW/include"
+include "GluEngine/vendor/glfw"
+
 project "GluEngine"
     location "GluEngine"
     kind "SharedLib"
@@ -34,13 +41,19 @@ project "GluEngine"
 
     includedirs{
         "%{prj.name}/src",
-        "%{prj.name}/vendor/spdlog/include"
+        "%{prj.name}/vendor/spdlog/include",
+        "%{includeDir.GLFW}"
+    }
+
+    links{
+        "GLFW",
+        "opengl32.lib"
     }
 
 
 
     filter "system:windows"
-        cppdialect = "C++17"
+        cppdialect = "C++1"
         staticruntime = "On"
         systemversion = "latest"
 
@@ -55,7 +68,10 @@ project "GluEngine"
 
     
     filter "configurations:Debug"
-        defines "GLUE_DEBUG"
+        defines {
+            "GLUE_DEBUG",
+            "GLUE_ENABLE_ASSERTS"
+        }
         symbols "On"
     
     filter "configurations:Release"
@@ -102,7 +118,10 @@ project "Sandbox"
         }
 
     filter "configurations:Debug"
-        defines "GLUE_DEBUG"
+        defines {
+            "GLUE_DEBUG",
+            "GLUE_ENABLE_ASSERTS"
+        }
         symbols "On"
 
     filter "configurations:Release"

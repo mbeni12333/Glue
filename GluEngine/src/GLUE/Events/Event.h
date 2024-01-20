@@ -1,5 +1,6 @@
 #pragma once
 
+#include "gepch.h"
 #include "GLUE/Core.h"
 
 namespace GLUE {

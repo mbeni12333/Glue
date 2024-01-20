@@ -1,3 +1,3 @@
-[submodule "GluEngine/vendor/glfw"]
-	path = GluEngine/vendor/glfw
-	url = https://github.com/TheCherno/glfw.git
+[submodule "GluEngine/vendor/GLFW"]
+	path = Hazel/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
