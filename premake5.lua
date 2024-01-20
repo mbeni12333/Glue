@@ -8,7 +8,7 @@ workspace "GluEngine"
         "Dist"
     }
 
-
+startproject "Sandbox"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 project "GluEngine"

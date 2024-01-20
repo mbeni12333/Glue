@@ -5,10 +5,8 @@
 class SandboxApp : public GLUE::Application{
 public:
     SandboxApp(){
-        std::cout << "Application Sanbox started " << std::endl;
     }
-    ~SandboxApp(){
-
+    ~SandboxApp(){      
     }
 };
 

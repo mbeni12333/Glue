@@ -6,6 +6,10 @@ extern GLUE::Application* GLUE::CreateApplication();
 
 int main(int argc, char** argv){
 
+    GLUE::Log::Init();
+    GLUE_CORE_INFO("Started Core Logger successfully");
+    GLUE_INFO("Started Client Logger successfully");
+
     auto app = GLUE::CreateApplication();
     app->Run();
     delete app;
