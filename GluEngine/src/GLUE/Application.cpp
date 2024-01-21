@@ -1,19 +1,26 @@
 #include "gepch.h"
 #include "GLUE/Application.h"
-
-#include "GLUE/Events/ApplicationEvent.h"
-#include "GLUE/Events/MouseEvent.h"
-
 #include <GLFW/glfw3.h>
 
 namespace GLUE {
 
+
+#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
+
+
 	Application::Application(){
 		m_Window = std::unique_ptr<Window>(Window::Create());
+		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
 
 
 	Application::~Application()	{
+	}
+
+	void Application::OnEvent(Event& e) {
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowCloseEvent));
+		GLUE_CORE_INFO("{0}", e);
 	}
 
 	void Application::Run()	{
@@ -34,5 +41,9 @@ namespace GLUE {
 			m_Window->OnUpdate();
 		}
 	}
+	bool Application::OnWindowCloseEvent(WindowCloseEvent& event) {
+		m_Running = false;
 
+		return true;
+	}
 }
